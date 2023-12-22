@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_g"
+    app:startDestination="@id/homePage">
+
+    <fragment
+        android:id="@+id/questionPage"
+        android:name="com.example.quizappxml.QuestionPage"
+        android:label="fragment_question_page"
+        tools:layout="@layout/fragment_question_page" >
+    <argument
+        android:name="categoryType"
+        app:argType="string" />
+        <action
+            android:id="@+id/action_questionPage_to_homePage"
+            app:destination="@id/homePage" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homePage"
+        android:name="com.example.quizappxml.HomePage"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePage_to_questionPage"
+            app:destination="@id/questionPage" />
+        <action
+            android:id="@+id/action_homePage_to_editProfile"
+            app:destination="@id/editProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfile"
+        android:name="com.example.quizappxml.EditProfile"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfile_to_homePage"
+            app:destination="@id/homePage" />
+        <action
+            android:id="@+id/action_editProfile_to_wrongQueListPage"
+            app:destination="@id/wrongQueListPage" />
+        <action
+            android:id="@+id/action_editProfile_to_userInfoEdit"
+            app:destination="@id/userInfoEdit" />
+    </fragment>
+    <fragment
+        android:id="@+id/wrongQueListPage"
+        android:name="com.example.quizappxml.WrongQueListPage"
+        android:label="fragment_wrong_que_list_page"
+        tools:layout="@layout/fragment_wrong_que_list_page" >
+        <action
+            android:id="@+id/action_wrongQueListPage_to_editProfile"
+            app:destination="@id/editProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/userInfoEdit"
+        android:name="com.example.quizappxml.UserInfoEdit"
+        android:label="fragment_user_info_edit"
+        tools:layout="@layout/fragment_user_info_edit" >
+        <action
+            android:id="@+id/action_userInfoEdit_to_editProfile"
+            app:destination="@id/editProfile" />
+        <action
+            android:id="@+id/action_userInfoEdit_to_homePage"
+            app:destination="@id/homePage" />
+    </fragment>
+</navigation>
